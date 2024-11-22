@@ -9,6 +9,7 @@ int main()
 {
 
     std::string userInput = "";
+    std::string playerName = "";
     std::vector<std::string> outputOptions = { "Rock","Paper", "Scissors" };
 
     std::cout << "Welcome, player, to this game of 'Rock, Paper, Scissors'!\n";
@@ -29,9 +30,17 @@ int main()
     }
     else {
         std::cout << "You chose " << userInput << ". An excellent choice.\n";
-        std::cout << "The computer counters with: " << randomOutput << ".\n";
+        std::cout << "The computer counters with " << randomOutput << ".\n";
     }
 
-
-
+    // cannot use a switch statement here because only int, enum or char is permitted as a switch param
+    if (userInput == "Rock" && randomOutput != "Paper") {
+        std::cout << "Congratulations, you win!\n";
+    } else if (userInput == "Paper" && randomOutput != "Scissors") {
+        std::cout << "Congratulations, you win!\n";
+    } else if (userInput == "Scissors" && randomOutput != "Rock") {
+        std::cout << "Congratulations, you win!\n";
+    } else {
+        std::cout << "Sorry, computer wins this round.\n";
+    }
 };
